@@ -3,13 +3,24 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.log
+
+# user settings
 local_settings.py
+
+# Database
 db.sqlite3
 db.sqlite3-journal
+
+# Python Version
 .python-version 
+
+#Settings
 .vscode/* 
 !.vscode/settings.json 
 !.vscode/tasks.json 
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+# Secrets
+secrets.json
