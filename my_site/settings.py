@@ -1,6 +1,7 @@
 from pathlib import Path
 import json
 from django.core.exceptions import ImproperlyConfigured
+#Do NOT import from django lib in settings.py (this is an exception)
 
 with open("secrets.json") as f:
     secrets = json.loads(f.read())
@@ -82,11 +83,12 @@ WSGI_APPLICATION = 'my_site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'my_local_db',
-        'USER': 'rootdrew',
-        'PASSWORD': get_secret("DB_PASSWORD"),
-        'HOST': '',
-        'PORT': '3306',         
+        'NAME': 'my_site_resume',
+        'USER': 'dbadmin',
+        'PASSWORD': '12345',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},        
     }
 }
 
