@@ -81,14 +81,17 @@ WSGI_APPLICATION = 'my_site.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # },
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'my_site_resume',
-        'USER': 'dbadmin',
-        'PASSWORD': '12345',
-        'HOST': '127.0.0.1',
+        'NAME': 'my-resume-site-django',
+        'USER': 'root',
+        'PASSWORD': get_secret('DB_PASSWORD'),
+        'HOST': 'localhost',
         'PORT': '3306',
-        'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},        
     }
 }
 
