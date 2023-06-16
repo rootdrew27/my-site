@@ -9,7 +9,7 @@ class Project(models.Model):
     technology = models.CharField(max_length=20)
     image = models.FilePathField(path="/img")
 
-    def __str__():
-        return Project.title 
+    def __str__(self):
+        return self.title 
     
     
