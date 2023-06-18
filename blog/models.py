@@ -25,4 +25,4 @@ class Comment(models.Model):
     post = models.ForeignKey('Post', on_delete=models.CASCADE)
 
     def __str__(self):
-        return Truncator(self.body).chars(50)
+        return Truncator(self.body).chars(50) 
