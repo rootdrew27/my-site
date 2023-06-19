@@ -12,7 +12,7 @@
     <a href="{% url 'BlogCategory' category.name %}">{{ category.name }}</a>&nbsp;
     {% endfor %}
   </small>
-  <p>{{ post.body | slice:"400" }}...</p>
+  <p>{{ post.body | slice:"400"}}...</p>
   {% endfor %}
 </div>
 {% endblock %}
