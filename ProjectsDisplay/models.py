@@ -8,7 +8,7 @@ class Project(models.Model):
     brief_description = models.CharField(max_length=50)
     description = models.TextField()
     technology = models.CharField(max_length=75)
-    image = models.FilePathField(path='/img')
+    image = models.FileField(null=True, blank=True)
 
     def __str__(self):
         return self.title 
