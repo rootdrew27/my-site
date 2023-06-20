@@ -31,7 +31,7 @@ def BlogDetail(request, pk:int):
         'comments': comments,
         'form': form
     }
-    return(request, 'blog_detail.html', context)
+    return render(request, 'blog_detail.html', context)
 
 def BlogCategory(request, category):
     posts = Post.objects.filter(categories__name__contains=category).order_by('-created_on')
@@ -39,4 +39,4 @@ def BlogCategory(request, category):
         'category': category,
         'posts': posts
     }
-    return(request, 'blog_category.html', context)
+    return render(request, 'blog_category.html', context)
