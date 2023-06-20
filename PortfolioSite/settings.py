@@ -1,6 +1,5 @@
 from pathlib import Path
 import json
-import os
 from django.core.exceptions import ImproperlyConfigured
 #Do NOT import from django lib in settings.py (this is an exception)
 
@@ -132,14 +131,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-STATIC_URL = 'static/'
-
-
-STATICFILES_DIRS = [
-    BASE_DIR / 'ProjectsDisplay' / 'static' / 'img'
-    
-]
-
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
