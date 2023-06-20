@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from Bio.views import BioIndex
 
 
 urlpatterns = [
+    path('', BioIndex, name="BioIndex"),
     path('admin/', admin.site.urls),
     path('ProjectsDisplay/', include('ProjectsDisplay.urls')),
     path('Blog/', include('Blog.urls')),
