@@ -2,13 +2,22 @@
 {% load static %}
 
 {% block page_content %}
-<div class="container">
-  <div class="container">
-    <img src="{% static bio.prof_pic %}">
-  </div class="container">
-  <h1>{{ bio.name }}</h1>
-  <br>
-  <p>{{ bio.body }}</p>
+<div class="col-md-8 m-auto pt-4">
+  <h1 class="text-center">Welcome to my Portfolio Home Page!</h1>
+  <h5 class="text-center text-muted">Use the Navigation Bar above to check out my Projects and Blog</h5>
+</div>
+
+
+<div class="col-md-6 offset-md-3 pt-3">
+  <div class="card">
+    <img class="card-img-left" src="{% static bio.prof_pic %}"> 
+    <div class="card-body">
+      <h1 class="card-title">{{ bio.name }}</h1>
+      <!-- insert github and linkedin links!!! -->
+      <p class="card-text">{{ bio.body }}</p>  
+    </div> 
+
+  </div>
 </div>
 
 {% endblock %}
