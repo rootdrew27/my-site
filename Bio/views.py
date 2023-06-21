@@ -5,8 +5,6 @@ from Bio.models import Bio
 def BioIndex(request):
     bio = Bio.objects.get()
     context = {
-        'name': bio.name,
-        'body': bio.body,
-        'profile picture': bio.prof_pic
+        'bio': bio
     }
     return render(request, 'bio_index.html', context)
