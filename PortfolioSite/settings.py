@@ -1,5 +1,6 @@
 from pathlib import Path
 import json
+import os
 from django.core.exceptions import ImproperlyConfigured
 #Do NOT import from django lib in settings.py (this is an exception)
 
@@ -40,7 +41,6 @@ INSTALLED_APPS = [
     'ProjectsDisplay',
     'Blog',
     'Bio',
-    'bootstrap5',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -135,10 +135,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join( BASE_DIR, 'root')
+
 STATICFILES_DIRS = [
     BASE_DIR / 'Bio' / 'static' / 'img' ,
     BASE_DIR / 'Blog' / 'static' / 'img' ,
-    BASE_DIR / 'ProjectsDisplay' / 'static' / 'img' 
+    BASE_DIR / 'ProjectsDisplay' / 'static' / 'img' ,
+    os.path.join( BASE_DIR, 'boot')
 ]
 
 # Default primary key field type

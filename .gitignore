@@ -11,7 +11,7 @@ local_settings.py
 db.sqlite3
 db.sqlite3-journal
 
-# Python Version
+# Python Version (its in the README)
 .python-version 
 
 #Settings
@@ -22,5 +22,7 @@ db.sqlite3-journal
 !.vscode/extensions.json 
 .history
 
-# Secrets
+# Shhhhhh
 secrets.json
+
+# bootstrap 

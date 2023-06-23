@@ -3,6 +3,7 @@
 Personal PortfolioSite Site w/ Django
 
 Python 3.11.0
+Bootstrap 5.3 (Precompiled)
 (other reqs listed in requirements.txt)
 
 
