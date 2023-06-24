@@ -134,32 +134,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
-
-def getAppStaticPaths():
-
-    listOfApps = []
-
-    #traverses INSTALLED_APPS and gets apps that arent made by django
-    for app in INSTALLED_APPS:
-        if (app[0:6] != "django"):
-            listOfApps.append(app)
     
-
-
-    listOfPaths = []
-
-    for app in listOfApps:
-        listOfPaths.append(os.path.join(BASE_DIR, app, 'static', app , 'imgs'))
-        listOfPaths.append(os.path.join(BASE_DIR, app, 'static', app, 'styles'))
-        listOfPaths.append(os.path.join(BASE_DIR, app, 'static', app, 'scripts'))
-                
-        #rename to Project when you convert this code to a module!
-
-    return listOfPaths
-
-STATICFILES_FINDERS = ["django.contrib.staticfiles.finders.FileSystemFinder"]
-    
-myPaths = getAppStaticPaths()
+myPaths = []
 myPaths.append(os.path.join( BASE_DIR, 'boot')) #bootstrap
 myPaths.append(os.path.join(BASE_DIR, 'PortfolioSite\static\PortfolioSite\imgs'))
 myPaths.append(os.path.join(BASE_DIR, 'PortfolioSite\static\PortfolioSite\styles'))
