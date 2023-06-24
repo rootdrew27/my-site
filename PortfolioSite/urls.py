@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from Bio.views import BioIndex
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 urlpatterns = [
@@ -23,4 +25,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('ProjectsDisplay/', include('ProjectsDisplay.urls')),
     path('Blog/', include('Blog.urls')),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) ## For Dev ONLY!

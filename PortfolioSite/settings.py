@@ -131,16 +131,43 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 
-STATIC_ROOT = os.path.join( BASE_DIR, 'root')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'Bio' / 'static' / 'img' ,
-    # BASE_DIR / 'Blog' / 'static' / 'img' ,
-    BASE_DIR / 'ProjectsDisplay' / 'static' / 'img' ,
-    os.path.join( BASE_DIR, 'boot')
-]
+def getAppStaticPaths():
+
+    listOfApps = []
+
+    #traverses INSTALLED_APPS and gets apps that arent made by django
+    for app in INSTALLED_APPS:
+        if (app[0:6] != "django"):
+            listOfApps.append(app)
+    
+
+
+    listOfPaths = []
+
+    for app in listOfApps:
+        listOfPaths.append(os.path.join(BASE_DIR, app, 'static', app , 'imgs'))
+        listOfPaths.append(os.path.join(BASE_DIR, app, 'static', app, 'styles'))
+        listOfPaths.append(os.path.join(BASE_DIR, app, 'static', app, 'scripts'))
+                
+        #rename to Project when you convert this code to a module!
+
+    return listOfPaths
+
+
+    
+myPaths = getAppStaticPaths()
+myPaths.append(os.path.join( BASE_DIR, 'boot')) #bootstrap
+myPaths.append(os.path.join(BASE_DIR, 'PortfolioSite\static\PortfolioSite\imgs'))
+myPaths.append(os.path.join(BASE_DIR, 'PortfolioSite\static\PortfolioSite\styles'))
+myPaths.append(os.path.join(BASE_DIR, 'PortfolioSite\static\PortfolioSite\scripts'))
+ 
+# .append(os.path.join( BASE_DIR, 'boot')) 
+
+STATICFILES_DIRS = myPaths
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
