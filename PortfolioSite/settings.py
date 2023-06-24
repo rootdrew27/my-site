@@ -17,8 +17,6 @@ def get_secret(setting, secrets=secrets):
 
 
 
-
-
 SECRET_KEY = get_secret("SECRET_KEY")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -139,7 +137,7 @@ STATIC_ROOT = os.path.join( BASE_DIR, 'root')
 
 STATICFILES_DIRS = [
     BASE_DIR / 'Bio' / 'static' / 'img' ,
-    BASE_DIR / 'Blog' / 'static' / 'img' ,
+    # BASE_DIR / 'Blog' / 'static' / 'img' ,
     BASE_DIR / 'ProjectsDisplay' / 'static' / 'img' ,
     os.path.join( BASE_DIR, 'boot')
 ]

@@ -1,16 +1,17 @@
 <!-- Temp bootstrap CDN link -->
 <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
 {% load static %}
+<html>
 <head>
 <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-<link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}">
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
 </head>
+<body>
 <div class="container">
   <nav class="navbar navbar-expand-lg border-bottom">
     <div class="container">
         <a class="navbar-brand my-0 h1" href="{% url 'BioIndex' %}">My Portfolio</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle avigation">
           <span class="navbar-toggler-icon"></span>
         </button>
   
@@ -32,3 +33,9 @@
 <div class="container pt-4">
   {% block page_content %}{% endblock %}
 </div>
+
+<script src="{% static 'js/jquery.3.7.0.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script> <!--includes Popper-->
+
+</body>
+</html>
