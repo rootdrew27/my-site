@@ -157,7 +157,7 @@ def getAppStaticPaths():
 
     return listOfPaths
 
-
+STATICFILES_FINDERS = ["django.contrib.staticfiles.finders.FileSystemFinder"]
     
 myPaths = getAppStaticPaths()
 myPaths.append(os.path.join( BASE_DIR, 'boot')) #bootstrap
