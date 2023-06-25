@@ -9,6 +9,7 @@ class Project(models.Model):
     description = models.TextField()
     technology = models.CharField(max_length=75)
     image = models.FileField(null=True, blank=True)
+    github_link = models.URLField(default=None)
 
     def __str__(self):
         return self.title 

@@ -152,7 +152,7 @@ myPaths.append(os.path.join(BASE_DIR, 'PortfolioSite\static\PortfolioSite\script
 
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
-    # "django.contribstaticfiles.finders.AppDirectoriesFinder" #Prod 
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder"  
     ]
 
 STATICFILES_DIRS = myPaths

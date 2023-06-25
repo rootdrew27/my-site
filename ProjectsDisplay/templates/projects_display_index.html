@@ -3,14 +3,19 @@
 
 <!-- display each project -->
 {% block page_content %}
-<h1>Projects</h1>
+<h1 class="text-center">Projects</h1>
+<hr>
 <div class="row my-4">
 {% for project in projects %}
   <div class="col-md-4">
     <div class="card h-100">
-      <img class="card-img-top" src="{% static project.image %}">
+      <img class="card-img-top h-75" src="{% static project.image %}">
+
       <div class="card-body">
-        <h5 class="card-title">{{ project.title }}</h5>
+        <div class="d-flex flex-row">
+          <h5 class="card-title">{{ project.title }}</h5>
+          <a class="mx-2" href="{{project.github_link}}"><i class="bi-github" style="font-size: 1.5rem;"></i></a>
+        </div>
         <p class="card-text">{{ project.brief_description }}</p>
         <a href="{% url 'ProjectDetail' project.pk %}" class="btn btn-primary">Read More</a>
       </div>
