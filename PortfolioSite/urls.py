@@ -25,4 +25,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('ProjectsDisplay/', include('ProjectsDisplay.urls')),
     path('Blog/', include('Blog.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) ## For Dev ONLY!
+] ## For Dev ONLY!

@@ -128,24 +128,33 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
+def getStaticPaths():
 
-# https://docs.djangoproject.com/en/4.1/howto/static-files/
+    appList = []
+
+    for app in INSTALLED_APPS:
+        if(app[0:6]!="django"):
+            appList.append(os.path.join(BASE_DIR, app, 'static', app, 'imgs'))
+            appList.append(os.path.join(BASE_DIR, app, 'static', app, 'styles'))
+            appList.append(os.path.join(BASE_DIR, app, 'static', app, 'scripts'))
+
+    return appList
+
 STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
     
-myPaths = []
+myPaths = getStaticPaths()
 myPaths.append(os.path.join( BASE_DIR, 'boot')) #bootstrap
 myPaths.append(os.path.join(BASE_DIR, 'PortfolioSite\static\PortfolioSite\imgs'))
 myPaths.append(os.path.join(BASE_DIR, 'PortfolioSite\static\PortfolioSite\styles'))
 myPaths.append(os.path.join(BASE_DIR, 'PortfolioSite\static\PortfolioSite\scripts'))
- 
-# .append(os.path.join( BASE_DIR, 'boot')) 
+
+STATICFILES_FINDERS = [
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    # "django.contribstaticfiles.finders.AppDirectoriesFinder" #Prod 
+    ]
 
 STATICFILES_DIRS = myPaths
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
