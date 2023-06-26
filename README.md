@@ -10,12 +10,10 @@ ToDeploy: (search 'ToDeploy:' in all files before deploying)
 - Remove unneeded boostrap files
 
 Todo: (search 'Todo:' in all files before deploying)
-
-- Play with card shadows (make it pop a little more)
-- Change primary-button color (this may require you to make css to overwrite the bootstrap colors)
 - Configuring project sturcture such that the project can easily and reliably find static files
-
-
+- 
+- Continue reading about Forms
+- Ability to delete comments
 
 
 Considerations:
