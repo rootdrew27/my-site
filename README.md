@@ -11,7 +11,7 @@ ToDeploy: (search 'ToDeploy:' in all files before deploying)
 
 Todo: (search 'Todo:' in all files before deploying)
 - Configuring project sturcture such that the project can easily and reliably find static files
-- 
+- Clean out bootstrap folder
 - Continue reading about Forms
 - Ability to delete comments
 

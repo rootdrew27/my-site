@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from Blog.models import Post, Comment
+from Blog.models import Post
 from Blog.forms import CommentForm
 
 # Create your views here.
@@ -14,22 +14,22 @@ def BlogIndex(request):
 def BlogDetail(request, pk:int):
     post = Post.objects.get(pk=pk)
 
-    form = CommentForm()
-    if request.method == 'POST':
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            comment = Comment(
-                author=form.cleaned_data['author'],
-                body=form.cleaned_data['body'],
-                post=post
-            )
-            comment.save()
+    # form = CommentForm()
+    # if request.method == 'POST':
+    #     form = CommentForm(request.POST)
+    #     if form.is_valid():
+    #         comment = Comment(
+    #             author=form.cleaned_data['author'],
+    #             body=form.cleaned_data['body'],
+    #             post=post
+    #         )
+    #         comment.save()
 
-    comments = Comment.objects.filter(post=post) 
+    # comments = Comment.objects.filter(post=post) 
     context = {
         'post': post,
-        'comments': comments,
-        'form': form
+        # 'comments': comments,
+        # 'form': form
     }
     return render(request, 'blog_detail.html', context)
 
