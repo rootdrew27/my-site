@@ -127,34 +127,20 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-def getStaticPaths():
-
-    appList = []
-
-    for app in INSTALLED_APPS:
-        if(app[0:6]!="django"):
-            appList.append(os.path.join(BASE_DIR, app, 'static', app, 'imgs'))
-            appList.append(os.path.join(BASE_DIR, app, 'static', app, 'styles'))
-            appList.append(os.path.join(BASE_DIR, app, 'static', app, 'scripts'))
-
-    return appList
-
 STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
     
-myPaths = getStaticPaths()
+myPaths = []
 myPaths.append(os.path.join( BASE_DIR, 'boot')) #bootstrap
-myPaths.append(os.path.join(BASE_DIR, 'PortfolioSite\static\PortfolioSite\imgs'))
-myPaths.append(os.path.join(BASE_DIR, 'PortfolioSite\static\PortfolioSite\styles'))
-myPaths.append(os.path.join(BASE_DIR, 'PortfolioSite\static\PortfolioSite\scripts'))
+myPaths.append(os.path.join(BASE_DIR, 'PortfolioSite\static\PortfolioSite'))
+
 
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder"  
     ]
 
-STATICFILES_DIRS = myPaths
+STATICFILES_DIRS = myPaths 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

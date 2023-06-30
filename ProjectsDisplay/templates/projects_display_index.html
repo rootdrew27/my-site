@@ -9,7 +9,7 @@
 {% for project in projects %}
   <div class="col-md-4">
     <div class="card h-100">
-      <img class="card-img-top h-75" src="{% static project.image %}">
+      <img class="card-img-top h-75" src="{% get_static_prefix %}{{ img_path }}{{ project.image }}">
 
       <div class="card-body">
         <div class="d-flex flex-row">

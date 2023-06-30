@@ -10,10 +10,9 @@ ToDeploy: (search 'ToDeploy:' in all files before deploying)
 - Remove unneeded boostrap files
 
 Todo: (search 'Todo:' in all files before deploying)
-- Configuring project sturcture such that the project can easily and reliably find static files
+- Static files
 - Clean out bootstrap folder
-- Continue reading about Forms
-- Ability to delete comments
+- Make 'Secret Key' longer
 
 
 Considerations:
