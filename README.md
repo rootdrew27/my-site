@@ -7,14 +7,11 @@ Bootstrap 5.3 (Precompiled)
 (other reqs listed in requirements.txt)
 
 ToDeploy: (search 'ToDeploy:' in all files before deploying)
-- Remove unneeded boostrap files
 
 Todo: (search 'Todo:' in all files before deploying)
-- Static files
-- Clean out bootstrap folder
-- Make 'Secret Key' longer
-
+- update Secrets on OMEN
 
 Considerations:
 - add CDNs with validation to speed up site
 - Carousel of Cards?
+- Speed up links?
