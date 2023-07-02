@@ -11,6 +11,7 @@ ToDeploy: (search 'ToDeploy:' in all files before deploying)
 Todo: (search 'Todo:' in all files before deploying)
 - update Secrets on OMEN
 
+
 Considerations:
 - add CDNs with validation to speed up site
 - Carousel of Cards?
