@@ -135,12 +135,13 @@ myPaths = []
 myPaths.append(os.path.join( BASE_DIR, 'boot')) #bootstrap
 myPaths.append(os.path.join(BASE_DIR, 'PortfolioSite\static\PortfolioSite'))
 
+STATICFILES_DIRS = myPaths 
 
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder"  
     ]
 
-STATICFILES_DIRS = myPaths 
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
